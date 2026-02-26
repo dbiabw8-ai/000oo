@@ -3,25 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emirates Islamic - Online Banking</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Emirates Islamic</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* ============================================
-           Emirates Islamic Login Page - CSS Styles
-           ============================================ */
+        /* =====================================================
+           Emirates Islamic Online Banking - Complete CSS
+           ===================================================== */
 
         :root {
-            --primary-purple: #6A3787;
-            --primary-purple-rgb: 106, 55, 135;
-            --button-gradient-start: #D7DAE5;
-            --button-gradient-end: #A4A7AF;
-            --text-dark: #575757;
+            /* Color Palette */
+            --colors-white: #ffffff;
+            --colors-black: #000000;
+            --colors-green: #286800;
+            --colors-red: #b90000;
+            --colors-blue-dark: #461e57;
+            --colors-blue: #461e57;
+            --colors-blue-light: #a3accb;
+            --colors-blue-lighter: #f4f7fe;
+            --colors-brown: #ea8c30;
+            --colors-yellow: #fcb813;
+            --colors-green-light: #5ec15b;
+            --colors-light-blue: #f1f5fd;
+            --colors-soft-blue: #648cf4;
+            
+            /* Product Colors */
+            --color-product-current-ink: #ffffff;
+            --color-product-current-1: #6a3787;
+            --color-product-current-2: #3a4d8e;
+            --color-product-current-3: #465895;
+            
+            /* Primitives */
+            --color-primitives-black: #000000;
+            --color-primitives-grey-50: #fafafa;
+            --color-primitives-grey-100: #eeeeee;
+            --color-primitives-grey-200: #d4d4d4;
+            --color-primitives-grey-300: #afafaf;
+            --color-primitives-grey-400: #545454;
+            
+            /* Text Colors */
+            --text-primary: #575757;
+            --text-secondary: #999999;
             --text-light: #f5f5f5;
+            
+            /* Border & Background */
             --border-color: rgba(0, 0, 0, 0.12);
-            --background-light: #f5f5f5;
-            --white: #ffffff;
+            --background-color: #f5f5f5;
+            --input-bg: #ffffff;
+            
+            /* Button Gradients */
+            --gradient-primary-start: #D7DAE5;
+            --gradient-primary-end: #A4A7AF;
         }
 
         * {
@@ -30,214 +65,287 @@
             box-sizing: border-box;
         }
 
-        html,
-        body {
+        html, body {
             width: 100%;
             height: 100%;
-            font-family: 'Open Sans', sans-serif;
-            background-color: var(--background-light);
-            color: var(--text-dark);
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-primary);
+            line-height: 1.6;
         }
 
-        .login-container {
+        body {
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
-            background-color: var(--background-light);
         }
 
-        /* ============================================
-           Header Styles
-           ============================================ */
+        /* =====================================================
+           Header / Navigation
+           ===================================================== */
 
-        .login-header {
+        .app-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 40px;
-            background-color: var(--white);
+            background-color: var(--colors-white);
             border-bottom: 1px solid #e0e0e0;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            z-index: 100;
         }
 
-        .logo-section {
+        .header-logo {
             display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background-color: var(--colors-blue-dark);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--colors-white);
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .logo-text {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--colors-blue-dark);
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 16px;
             align-items: center;
         }
 
-        .logo-section svg {
-            height: 40px;
-            width: auto;
-        }
-
-        .language-toggle {
-            background-color: #FFD700;
-            color: #000;
+        .language-btn {
+            background-color: var(--colors-yellow);
+            color: var(--colors-black);
             border: none;
             padding: 8px 16px;
             border-radius: 4px;
             font-size: 14px;
             font-weight: 600;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
             font-family: 'Open Sans', sans-serif;
         }
 
-        .language-toggle:hover {
+        .language-btn:hover {
             background-color: #FFC700;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
-        /* ============================================
-           Main Content
-           ============================================ */
+        .language-btn:active {
+            transform: translateY(0);
+        }
 
-        .login-main {
+        /* =====================================================
+           Main Container
+           ===================================================== */
+
+        .main-container {
             flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 40px 20px;
+            background-color: var(--background-color);
         }
 
-        .login-content {
+        .login-wrapper {
             width: 100%;
-            max-width: 500px;
+            max-width: 520px;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
         }
 
-        /* ============================================
+        /* =====================================================
            Welcome Section
-           ============================================ */
+           ===================================================== */
 
         .welcome-section {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 48px;
+            padding: 0 20px;
         }
 
-        .welcome-section h1 {
-            font-size: 24px;
+        .welcome-heading {
+            font-size: 28px;
             font-weight: 300;
-            color: var(--text-dark);
+            color: var(--text-primary);
             line-height: 1.4;
+            letter-spacing: -0.5px;
         }
 
-        /* ============================================
-           Login Form
-           ============================================ */
+        .welcome-heading span {
+            display: block;
+        }
+
+        /* =====================================================
+           Form Section
+           ===================================================== */
 
         .login-form {
             display: flex;
             flex-direction: column;
-            gap: 24px;
+            gap: 28px;
         }
 
-        /* ============================================
-           Form Group
-           ============================================ */
-
+        /* Form Group */
         .form-group {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 10px;
         }
 
         .form-label {
             font-size: 14px;
             font-weight: 600;
-            color: var(--text-dark);
+            color: var(--text-primary);
             display: block;
+            text-transform: none;
+            letter-spacing: 0;
         }
 
-        /* ============================================
-           Form Field Wrapper
-           ============================================ */
+        /* =====================================================
+           Input Fields
+           ===================================================== */
 
-        .form-field-wrapper {
+        .form-field-container {
             position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .form-input-wrapper {
+            width: 100%;
             display: flex;
             align-items: center;
             border: 2px solid var(--border-color);
             border-radius: 4px;
-            background-color: var(--white);
-            transition: border-color 0.3s ease;
+            background-color: var(--input-bg);
+            transition: all 0.3s ease;
+            padding: 0;
+            overflow: hidden;
         }
 
-        .form-field-wrapper:focus-within {
-            border-color: var(--primary-purple);
+        .form-input-wrapper:focus-within {
+            border-color: var(--color-product-current-1);
+            box-shadow: 0 0 0 3px rgba(106, 55, 135, 0.05);
         }
 
         .form-input {
             flex: 1;
             border: none;
-            padding: 12px 16px;
+            padding: 14px 16px;
             font-size: 14px;
             font-family: 'Open Sans', sans-serif;
-            color: var(--text-dark);
+            color: var(--text-primary);
             background-color: transparent;
             outline: none;
+            -webkit-appearance: none;
+            appearance: none;
         }
 
         .form-input::placeholder {
-            color: #999;
+            color: var(--text-secondary);
         }
 
-        /* ============================================
-           Password Field Specific
-           ============================================ */
+        .form-input:autofill {
+            -webkit-autofill: none;
+            -webkit-text-fill-color: var(--text-primary);
+        }
 
-        .password-wrapper {
+        /* Password Field Specific */
+        .password-field-wrapper {
             padding-right: 12px;
         }
 
-        .password-toggle {
+        .password-toggle-btn {
             background: none;
             border: none;
             cursor: pointer;
-            padding: 8px;
+            padding: 8px 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: opacity 0.2s ease;
+            color: var(--color-product-current-1);
+            transition: all 0.2s ease;
+            flex-shrink: 0;
         }
 
-        .password-toggle:hover {
+        .password-toggle-btn:hover {
             opacity: 0.7;
         }
 
-        .password-toggle svg {
-            width: 20px;
-            height: 20px;
+        .password-toggle-btn:active {
+            opacity: 0.9;
         }
 
-        /* ============================================
-           Checkbox Styles
-           ============================================ */
+        .password-toggle-btn svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--color-product-current-1);
+            stroke-width: 2;
+            fill: none;
+        }
 
-        .checkbox-group {
+        /* =====================================================
+           Checkbox
+           ===================================================== */
+
+        .checkbox-wrapper {
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin-top: 8px;
+            gap: 12px;
+            margin-top: 4px;
         }
 
         .checkbox-input {
             width: 18px;
             height: 18px;
             cursor: pointer;
-            accent-color: var(--primary-purple);
+            accent-color: var(--color-product-current-1);
+            border-radius: 3px;
+            border: 2px solid var(--border-color);
+            transition: all 0.2s ease;
+        }
+
+        .checkbox-input:hover {
+            border-color: var(--color-product-current-1);
+        }
+
+        .checkbox-input:checked {
+            background-color: var(--color-product-current-1);
+            border-color: var(--color-product-current-1);
         }
 
         .checkbox-label {
             font-size: 14px;
-            color: var(--text-dark);
+            color: var(--text-primary);
             cursor: pointer;
             user-select: none;
+            font-weight: 400;
         }
 
-        /* ============================================
-           Button Styles
-           ============================================ */
+        /* =====================================================
+           Buttons
+           ===================================================== */
 
         .btn {
-            padding: 12px 24px;
+            padding: 14px 24px;
             font-size: 14px;
             font-weight: 600;
             border: none;
@@ -247,123 +355,155 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
             font-family: 'Open Sans', sans-serif;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-decoration: none;
+            min-height: 48px;
         }
 
-        /* Primary Button (Login) */
+        /* Primary Button - Login */
         .btn-primary {
-            background: linear-gradient(91.36deg, var(--button-gradient-start), var(--button-gradient-end));
-            color: var(--white);
+            background: linear-gradient(91.36deg, var(--gradient-primary-start) 0%, var(--gradient-primary-end) 100%);
+            color: var(--colors-white);
             width: 100%;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border: 2px solid transparent;
         }
 
         .btn-primary:hover {
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+            transform: translateY(-2px);
         }
 
         .btn-primary:active {
             transform: translateY(0);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
         .btn-primary:disabled {
-            opacity: 0.6;
+            opacity: 0.5;
             cursor: not-allowed;
+            transform: none;
         }
 
-        /* Secondary Button (Register) */
+        /* Secondary Button - Register */
         .btn-secondary {
-            background-color: var(--white);
-            color: var(--primary-purple);
-            border: 2px solid var(--primary-purple);
+            background-color: var(--colors-white);
+            color: var(--color-product-current-1);
+            border: 2px solid var(--color-product-current-1);
             width: 100%;
         }
 
         .btn-secondary:hover {
-            background-color: rgba(var(--primary-purple-rgb), 0.05);
+            background-color: rgba(106, 55, 135, 0.05);
+            box-shadow: 0 2px 8px rgba(106, 55, 135, 0.1);
         }
 
         .btn-secondary:active {
-            background-color: rgba(var(--primary-purple-rgb), 0.1);
+            background-color: rgba(106, 55, 135, 0.1);
         }
 
-        /* Tertiary Button (Forgot Credentials) */
+        /* Tertiary Button - Forgot Credentials */
         .btn-tertiary {
             background-color: transparent;
-            color: var(--primary-purple);
+            color: var(--color-product-current-1);
             border: 2px solid transparent;
             width: 100%;
             text-decoration: underline;
+            padding: 12px 24px;
         }
 
         .btn-tertiary:hover {
-            background-color: rgba(var(--primary-purple-rgb), 0.05);
+            background-color: rgba(106, 55, 135, 0.05);
+            text-decoration: underline;
         }
 
         .btn-tertiary:active {
-            background-color: rgba(var(--primary-purple-rgb), 0.1);
+            background-color: rgba(106, 55, 135, 0.1);
         }
 
-        /* ============================================
+        /* =====================================================
            Register Section
-           ============================================ */
+           ===================================================== */
 
         .register-section {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 16px;
-            margin-top: 32px;
-            padding-top: 24px;
+            margin-top: 40px;
+            padding-top: 28px;
             border-top: 1px solid var(--border-color);
         }
 
         .register-text {
             font-size: 14px;
-            color: var(--text-dark);
+            color: var(--text-primary);
+            text-align: center;
         }
 
-        /* ============================================
+        /* =====================================================
            Responsive Design
-           ============================================ */
+           ===================================================== */
 
         @media (max-width: 768px) {
-            .login-header {
+            .app-header {
                 padding: 16px 20px;
             }
 
-            .login-main {
-                padding: 20px 16px;
+            .main-container {
+                padding: 24px 16px;
             }
 
-            .login-content {
+            .login-wrapper {
                 max-width: 100%;
             }
 
-            .welcome-section h1 {
-                font-size: 20px;
+            .welcome-heading {
+                font-size: 22px;
             }
 
             .login-form {
                 gap: 20px;
             }
 
+            .form-input {
+                padding: 12px 14px;
+                font-size: 16px;
+            }
+
             .btn {
-                padding: 10px 20px;
+                padding: 12px 20px;
                 font-size: 13px;
+                min-height: 44px;
             }
         }
 
         @media (max-width: 480px) {
-            .login-header {
+            .app-header {
                 padding: 12px 16px;
             }
 
-            .login-main {
+            .header-logo {
+                gap: 8px;
+            }
+
+            .logo-text {
+                font-size: 12px;
+            }
+
+            .main-container {
                 padding: 16px 12px;
             }
 
-            .welcome-section h1 {
+            .welcome-section {
+                margin-bottom: 32px;
+                padding: 0 12px;
+            }
+
+            .welcome-heading {
                 font-size: 18px;
             }
 
@@ -372,168 +512,259 @@
             }
 
             .form-input {
-                padding: 10px 12px;
-                font-size: 13px;
+                padding: 11px 12px;
+                font-size: 16px;
             }
 
             .btn {
-                padding: 10px 16px;
+                padding: 11px 16px;
                 font-size: 12px;
+                min-height: 40px;
+            }
+
+            .register-section {
+                margin-top: 32px;
+                padding-top: 20px;
+            }
+        }
+
+        /* =====================================================
+           Accessibility
+           ===================================================== */
+
+        .form-input:focus,
+        .checkbox-input:focus,
+        .btn:focus {
+            outline: 2px solid var(--color-product-current-1);
+            outline-offset: 2px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* =====================================================
+           Print Styles
+           ===================================================== */
+
+        @media print {
+            .app-header,
+            .language-btn,
+            .btn {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
-    <div class="login-container">
-        <!-- Header with Language Toggle -->
-        <header class="login-header">
-            <div class="logo-section">
-                <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="120" height="40" fill="#1a1a3e" rx="4" />
-                    <text x="60" y="26" text-anchor="middle" fill="white" font-size="14" font-weight="bold" font-family="Open Sans">
-                        EMIRATES ISLAMIC
-                    </text>
-                </svg>
+    <!-- Header -->
+    <header class="app-header">
+        <div class="header-logo">
+            <div class="logo-icon">EI</div>
+            <div class="logo-text">
+                EMIRATES<br>ISLAMIC
             </div>
-            <button class="language-toggle">عربي</button>
-        </header>
+        </div>
+        <div class="header-actions">
+            <button class="language-btn" onclick="changeLanguage()" aria-label="Change language to Arabic">
+                عربي
+            </button>
+        </div>
+    </header>
 
-        <!-- Main Login Form -->
-        <main class="login-main">
-            <div class="login-content">
-                <!-- Welcome Text -->
-                <div class="welcome-section">
-                    <h1>Welcome to Emirates Islamic Online Banking</h1>
-                </div>
+    <!-- Main Content -->
+    <main class="main-container">
+        <div class="login-wrapper">
+            <!-- Welcome Section -->
+            <section class="welcome-section">
+                <h1 class="welcome-heading">
+                    <span>Welcome to Emirates</span>
+                    <span>Islamic Online Banking</span>
+                </h1>
+            </section>
 
-                <!-- Login Form -->
-                <form class="login-form" onsubmit="handleLogin(event)">
-                    <!-- Email/Username Field -->
-                    <div class="form-group">
-                        <label for="email" class="form-label">
-                            Email or Username
-                        </label>
-                        <div class="form-field-wrapper">
+            <!-- Login Form -->
+            <form class="login-form" onsubmit="handleLoginSubmit(event)" novalidate>
+                <!-- Email/Username Field -->
+                <div class="form-group">
+                    <label for="userName" class="form-label">Email or Username</label>
+                    <div class="form-field-container">
+                        <div class="form-input-wrapper">
                             <input
-                                id="email"
+                                id="userName"
                                 type="text"
                                 class="form-input"
                                 placeholder=""
+                                name="userName"
                                 required
+                                autocomplete="username"
+                                aria-required="true"
                             />
                         </div>
                     </div>
+                </div>
 
-                    <!-- Password Field -->
-                    <div class="form-group">
-                        <label for="password" class="form-label">
-                            Password
-                        </label>
-                        <div class="form-field-wrapper password-wrapper">
+                <!-- Password Field -->
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <div class="form-field-container">
+                        <div class="form-input-wrapper password-field-wrapper">
                             <input
                                 id="password"
                                 type="password"
                                 class="form-input"
                                 placeholder=""
+                                name="password"
                                 required
+                                autocomplete="current-password"
+                                aria-required="true"
                             />
                             <button
                                 type="button"
-                                class="password-toggle"
+                                class="password-toggle-btn"
                                 onclick="togglePasswordVisibility()"
                                 aria-label="Toggle password visibility"
+                                aria-pressed="false"
                             >
-                                <svg id="eye-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z" stroke="#3F2967" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    <path d="M21.5 12.5C21.5 14.5 16.5 18.5 12 18.5C7.5 18.5 2.5 14.5 2.5 12.5C2.5 10.5 7 5.5 12 5.5C17 5.5 21.5 10.5 21.5 12.5Z" stroke="#3F2967" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z"></path>
+                                    <path d="M21.5 12.5C21.5 14.5 16.5 18.5 12 18.5C7.5 18.5 2.5 14.5 2.5 12.5C2.5 10.5 7 5.5 12 5.5C17 5.5 21.5 10.5 21.5 12.5Z"></path>
                                 </svg>
                             </button>
                         </div>
                     </div>
-
-                    <!-- Remember Me Checkbox -->
-                    <div class="checkbox-group">
-                        <input
-                            id="remember"
-                            type="checkbox"
-                            class="checkbox-input"
-                        />
-                        <label for="remember" class="checkbox-label">
-                            Remember me
-                        </label>
-                    </div>
-
-                    <!-- Login Button -->
-                    <button type="submit" class="btn btn-primary">
-                        LOGIN
-                    </button>
-
-                    <!-- Forgot Credentials Button -->
-                    <button type="button" class="btn btn-tertiary" onclick="handleForgotCredentials()">
-                        FORGOT CREDENTIALS
-                    </button>
-                </form>
-
-                <!-- Register Section -->
-                <div class="register-section">
-                    <p class="register-text">Don't have access to online banking?</p>
-                    <button type="button" class="btn btn-secondary" onclick="handleRegister()">
-                        REGISTER
-                    </button>
                 </div>
-            </div>
-        </main>
-    </div>
 
+                <!-- Remember Me Checkbox -->
+                <div class="checkbox-wrapper">
+                    <input
+                        id="rememberMe"
+                        type="checkbox"
+                        class="checkbox-input"
+                        name="rememberMe"
+                    />
+                    <label for="rememberMe" class="checkbox-label">Remember me</label>
+                </div>
+
+                <!-- Login Button -->
+                <button type="submit" class="btn btn-primary">
+                    LOGIN
+                </button>
+
+                <!-- Forgot Credentials Button -->
+                <button type="button" class="btn btn-tertiary" onclick="handleForgotCredentials()">
+                    FORGOT CREDENTIALS
+                </button>
+            </form>
+
+            <!-- Register Section -->
+            <section class="register-section">
+                <p class="register-text">Don't have access to online banking?</p>
+                <button type="button" class="btn btn-secondary" onclick="handleRegister()">
+                    REGISTER
+                </button>
+            </section>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
     <script>
-        // Toggle password visibility
+        // Password visibility toggle
         function togglePasswordVisibility() {
             const passwordInput = document.getElementById('password');
-            const eyeIcon = document.getElementById('eye-icon');
+            const toggleBtn = event.currentTarget;
+            const isPassword = passwordInput.type === 'password';
             
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
-                // Change to eye-off icon
-                eyeIcon.innerHTML = '<path d="M3 3l18 18M9.878 9.878C9.33 10.44 9 11.189 9 12c0 1.657 1.343 3 3 3c.811 0 1.56-.33 2.122-.878M9.878 9.878l6.364-6.364M9.878 9.878L3 3m15 15l-6.364-6.364m6.364 6.364C19.33 16.56 20 15.811 20 15c0-1.657-1.343-3-3-3c-.811 0-1.56.33-2.122.878" stroke="#3F2967" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+            passwordInput.type = isPassword ? 'text' : 'password';
+            toggleBtn.setAttribute('aria-pressed', !isPassword);
+            
+            // Update SVG icon
+            const svg = toggleBtn.querySelector('svg');
+            if (isPassword) {
+                // Show eye-off icon
+                svg.innerHTML = '<path d="M3 3l18 18M9.878 9.878C9.33 10.44 9 11.189 9 12c0 1.657 1.343 3 3 3c.811 0 1.56-.33 2.122-.878M9.878 9.878l6.364-6.364M9.878 9.878L3 3m15 15l-6.364-6.364m6.364 6.364C19.33 16.56 20 15.811 20 15c0-1.657-1.343-3-3-3c-.811 0-1.56.33-2.122.878" stroke="#3F2967" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>';
             } else {
-                passwordInput.type = 'password';
-                // Change back to eye icon
-                eyeIcon.innerHTML = '<path d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z" stroke="#3F2967" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M21.5 12.5C21.5 14.5 16.5 18.5 12 18.5C7.5 18.5 2.5 14.5 2.5 12.5C2.5 10.5 7 5.5 12 5.5C17 5.5 21.5 10.5 21.5 12.5Z" stroke="#3F2967" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>';
+                // Show eye icon
+                svg.innerHTML = '<path d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z"></path><path d="M21.5 12.5C21.5 14.5 16.5 18.5 12 18.5C7.5 18.5 2.5 14.5 2.5 12.5C2.5 10.5 7 5.5 12 5.5C17 5.5 21.5 10.5 21.5 12.5Z"></path>';
             }
         }
 
         // Handle login form submission
-        function handleLogin(event) {
+        function handleLoginSubmit(event) {
             event.preventDefault();
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            const rememberMe = document.getElementById('remember').checked;
             
-            console.log('Login attempt:', {
-                email: email,
-                password: password,
-                rememberMe: rememberMe
+            const userName = document.getElementById('userName').value;
+            const password = document.getElementById('password').value;
+            const rememberMe = document.getElementById('rememberMe').checked;
+            
+            // Validate inputs
+            if (!userName.trim() || !password.trim()) {
+                alert('Please fill in all required fields');
+                return;
+            }
+            
+            console.log('Login submitted:', {
+                userName: userName,
+                password: '***',
+                rememberMe: rememberMe,
+                timestamp: new Date().toISOString()
             });
             
-            alert('Login submitted!\nEmail: ' + email + '\nRemember Me: ' + rememberMe);
+            // Simulate login
+            alert('Login attempt for: ' + userName);
+            
+            // In a real application, you would send this data to your backend
+            // fetch('/api/login', {
+            //     method: 'POST',
+            //     headers: { 'Content-Type': 'application/json' },
+            //     body: JSON.stringify({ userName, password, rememberMe })
+            // });
         }
 
-        // Handle forgot credentials button
+        // Handle forgot credentials
         function handleForgotCredentials() {
+            console.log('Forgot credentials clicked');
             alert('Redirecting to Forgot Credentials page...');
             // window.location.href = '/forgot-credentials';
         }
 
-        // Handle register button
+        // Handle register
         function handleRegister() {
+            console.log('Register clicked');
             alert('Redirecting to Register page...');
             // window.location.href = '/register';
         }
 
-        // Handle language toggle
-        document.querySelector('.language-toggle').addEventListener('click', function() {
+        // Change language
+        function changeLanguage() {
+            console.log('Language toggle clicked');
             alert('Language changed to Arabic');
-            // Implement language switching logic here
+            // Implement language switching logic
+            // document.documentElement.lang = 'ar';
+            // document.documentElement.dir = 'rtl';
+        }
+
+        // Form validation on input
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('.login-form');
+            const inputs = form.querySelectorAll('.form-input');
+            
+            inputs.forEach(input => {
+                input.addEventListener('invalid', function(e) {
+                    e.preventDefault();
+                    this.parentElement.style.borderColor = '#b90000';
+                });
+                
+                input.addEventListener('input', function() {
+                    if (this.validity.valid) {
+                        this.parentElement.style.borderColor = 'rgba(0, 0, 0, 0.12)';
+                    }
+                });
+            });
         });
     </script>
 </body>
